@@ -1,8 +1,15 @@
 import { useState, useEffect } from 'react';
 import Seedling from '../components/Reusable/Seedling';
 
+import { GetUserProfile } from '../handlers/facebook';
+
 // SCSS
 import '../sass/Unique/_home.scss';
+
+async function getUser() {
+  const userProfile = await GetUserProfile();
+  console.log(userProfile);
+}
 
 function Home() {
   const [seeds, setSeeds] = useState([]);
@@ -25,6 +32,7 @@ function Home() {
         {seeds.map((seed, i) => {
           return <Seedling seed={ seed } key={ i } />
         })}
+        <button onClick={ getUser }>Get User Profile</button>
       </div>
     );
   } else return null;

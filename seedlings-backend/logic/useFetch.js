@@ -1,4 +1,6 @@
-export default async function useFetch(URL, methodType, data) {
+const fetch = require('node-fetch');
+
+module.exports = async function useFetch(URL, methodType, data) {
   let options;
 
   // if method is GET

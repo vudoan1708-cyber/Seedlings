@@ -10,8 +10,8 @@ const compression = require('compression');
 
 // Routing Components
 const facebookRouter = require('./routes/facebook');
-const loginRouter = require('./routes/fb-login');
-const callbackRouter = require('./routes/fb-callback');
+const loginRouter = require('./routes/login');
+const callbackRouter = require('./routes/callback');
 
 const root = path.join(__dirname, './dist');
 const port = process.env.PORT || 5000;
